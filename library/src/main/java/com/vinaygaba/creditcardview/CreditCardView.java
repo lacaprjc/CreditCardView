@@ -355,7 +355,7 @@ public class CreditCardView extends RelativeLayout {
         // Set the appropriate text color to the validTill TextView
         mValidTill.setTextColor(mValidTillTextColor);
 
-        // If CVV is not null, set it to the expiryDate TextView
+        // If CVV is not null, set it to the cvv EditText
         if (!TextUtils.isEmpty(mCvv)) {
             mCvvView.setText(mCvv);
         }
@@ -558,6 +558,18 @@ public class CreditCardView extends RelativeLayout {
         this.mCardNumber = cardNumber.replaceAll("\\s+", "");
         this.mCardNumberView.setText(addSpaceToCardNumber());
         redrawViews();
+    }
+
+    public String getCvv() {
+        return mCvv;
+    }
+
+    public void setCvv(String mCvv) {
+        // If CVV is not null and it is editable, set it to the cvv EditText
+        if (!TextUtils.isEmpty(mCvv) && mIsCvvEditable) {
+            this.mCvv = mCvv;
+            mCvvView.setText(mCvv);
+        }
     }
 
     public String getCardName() {
