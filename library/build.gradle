@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 
-version = "1.0.4"
-
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
+    namespace "com.vinaygaba.creditcardview"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 2
         versionName "1.0.5"
     }
